@@ -25,7 +25,7 @@ const INITIAL_STATE = {
         { id: 'h2', text: 'Call Mom' },
     ],
     daily: [
-        { id: 'd1', text: 'Finish App Logic', completed: false },
+        { id: 'd1', text: 'Finish App Logic', completed: false, label: 'work' },
     ],
     archive: [],
     lastActiveDate: getTodayString(),
@@ -82,8 +82,8 @@ export const useTaskStore = () => {
         localStorage.setItem('digital-sanctuary-v2', JSON.stringify(stateToSave));
     }, [state]);
 
-    const addTask = (text, list = 'daily') => {
-        const newTask = { id: generateId(), text, completed: false, createdAt: Date.now() };
+    const addTask = (text, list = 'daily', label = 'work') => {
+        const newTask = { id: generateId(), text, completed: false, label, createdAt: Date.now() };
         setState(prev => ({
             ...prev,
             [list]: [newTask, ...prev[list]] // Add to top

@@ -44,9 +44,25 @@ const Hopper = ({ tasks = [], Draggable, onViewArchive, isArchiveActive }) => {
                                     style={{
                                         ...provided.draggableProps.style,
                                         opacity: snapshot.isDragging ? 0.8 : 1,
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        gap: '4px'
                                     }}
                                 >
-                                    {task.text}
+                                    <div style={{ wordBreak: 'break-word' }}>{task.text}</div>
+                                    {task.label && (
+                                        <span style={{
+                                            fontSize: '0.65rem',
+                                            padding: '2px 6px',
+                                            borderRadius: '4px',
+                                            backgroundColor: task.label === 'work' ? '#e0f2fe' : '#fce7f3',
+                                            color: task.label === 'work' ? '#0369a1' : '#be185d',
+                                            width: 'fit-content',
+                                            textTransform: 'capitalize'
+                                        }}>
+                                            {task.label}
+                                        </span>
+                                    )}
                                 </div>
                             )}
                         </Draggable>

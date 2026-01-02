@@ -58,7 +58,7 @@ function App() {
             <div ref={provided.innerRef} {...provided.droppableProps} style={{ height: '100%' }}>
               <DailyTodos
                 tasks={daily}
-                onAdd={(text) => addTask(text, 'daily')}
+                onAdd={(text, label) => addTask(text, 'daily', label)}
                 onToggle={(id) => toggleComplete(id, 'daily')}
                 onDelete={(id) => deleteTask(id, 'daily')}
                 Draggable={Draggable}
