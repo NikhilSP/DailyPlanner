@@ -1,0 +1,65 @@
+.gridContainer {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "sidebar center center"
+        "sidebar center center";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 200px 1fr;
+    /* Reduced sidebar width */
+    gap: var(--spacing-lg);
+    width: 95%;
+    height: 100%;
+    max-width: 700px;
+    /* Reduced from 1400px to accommodate 40% constraint better while remaining usable */
+    position: relative;
+}
+
+.headerArea {
+    grid-area: header;
+    /* Header can be collapsible, so auto height */
+}
+
+.sidebarArea {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.centerArea {
+    grid-area: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.companionArea {
+    position: fixed;
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    z-index: 50;
+    pointer-events: none;
+    /* Let clicks pass through if empty */
+}
+
+/* Responsive considerations for smaller screens */
+@media (max-width: 600px) {
+    .gridContainer {
+        grid-template-areas:
+            "header"
+            "center"
+            "sidebar";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+        overflow-y: auto;
+    }
+
+    .sidebarArea {
+        order: 3;
+        flex-direction: row;
+        /* Horizontal sidebar on mobile? Optional but good for narrow */
+        max-height: 200px;
+        overflow-x: auto;
+    }
+}

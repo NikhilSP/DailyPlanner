@@ -1,0 +1,110 @@
+:root {
+  /* Palette - "Digital Sanctuary" / "Bento Box" Theme */
+  --bg-app: #FDFCF8;
+  /* Soft Off-White/Cream */
+  --text-primary: #2D3436;
+  --text-secondary: #636E72;
+
+  /* Cards / Bento Islands */
+  --bg-card: #FFFFFF;
+  --border-card: #F0F0F0;
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.03);
+
+  /* Accents */
+  --accent-primary: #a8dadc;
+  /* Soft Blue/Green */
+  --accent-secondary: #f4a261;
+  /* Soft Orange */
+  --accent-focus: #e76f51;
+  /* Burnt Sienna for focus */
+  --accent-calm: #457b9d;
+  /* Deep Blue for calm */
+
+  /* Status */
+  --status-success: #C8E6C9;
+  --status-warning: #FFF9C4;
+
+  /* Spacing & Radius */
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 6px;
+
+  --spacing-sm: 6px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-sans);
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  overflow: hidden;
+  /* Prevent scrolling for "App" feel */
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-md);
+}
+
+/* Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: var(--shadow-card);
+}
+
+.bento-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-card);
+  padding: var(--spacing-md);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.bento-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  /* For horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-secondary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-focus);
+}

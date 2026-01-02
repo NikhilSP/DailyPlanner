@@ -1,0 +1,184 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeIn 0.2s forwards;
+}
+
+.modal {
+    background: #FFF;
+    width: 90%;
+    max-width: 500px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    max-height: 85vh;
+    transform: scale(0.95);
+    animation: scaleUp 0.2s forwards;
+    overflow: hidden;
+}
+
+.header {
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-card);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FAFAFA;
+}
+
+.titleInput {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    border: 1px solid transparent;
+    background: transparent;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    flex-grow: 1;
+    margin-right: var(--spacing-md);
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.titleInput:focus {
+    background: #FFF;
+    border-color: var(--accent-primary);
+    outline: none;
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    padding: 4px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.closeBtn:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--text-primary);
+}
+
+.content {
+    padding: var(--spacing-lg);
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.sectionTitle {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.checkpointsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.checkpointItem {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: 8px;
+    border-radius: var(--radius-sm);
+    transition: background 0.2s;
+}
+
+.checkpointItem:hover {
+    background: #FAFAFA;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid var(--border-card);
+    cursor: pointer;
+    accent-color: var(--accent-focus);
+    margin-top: 2px;
+}
+
+.checkpointText {
+    flex-grow: 1;
+    font-size: 1rem;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.completedText {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.deleteBtn {
+    opacity: 0;
+    color: #FF5252;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    padding: 2px;
+}
+
+.checkpointItem:hover .deleteBtn {
+    opacity: 1;
+}
+
+.footer {
+    padding: var(--spacing-lg);
+    border-top: 1px solid var(--border-card);
+    background: #FAFAFA;
+}
+
+.addInput {
+    width: 100%;
+    border: 1px solid var(--border-card);
+    background: #FFF;
+    padding: 10px 12px;
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.addInput:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(168, 218, 220, 0.2);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    to {
+        transform: scale(1);
+    }
+}

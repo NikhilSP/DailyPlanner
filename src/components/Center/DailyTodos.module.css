@@ -1,0 +1,139 @@
+.container {
+    height: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: var(--spacing-lg) var(--spacing-lg) 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.dateBadge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--status-warning);
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: #F57F17;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+}
+
+.dateText {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.taskList {
+    flex-grow: 1;
+    padding: 0 var(--spacing-lg);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    /* Make sure drop area covers space */
+    min-height: 100px;
+}
+
+.emptyFocus {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+.dailyTask {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: #FAFAFA;
+    border-radius: var(--radius-md);
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.dailyTask:hover {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.checkboxWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    border: 2px solid var(--border-card);
+    cursor: pointer;
+    accent-color: var(--accent-focus);
+}
+
+.taskText {
+    font-size: 1rem;
+    color: var(--text-primary);
+    flex-grow: 1;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.4;
+}
+
+.deleteBtn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    opacity: 0;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.deleteBtn:hover {
+    background: #FFEBEE;
+    color: #D32F2F;
+}
+
+.dailyTask:hover .deleteBtn {
+    opacity: 0.5;
+}
+
+.dailyTask:hover .deleteBtn:hover {
+    opacity: 1;
+}
+
+.inputArea {
+    padding: var(--spacing-lg);
+    border-top: 1px solid var(--border-card);
+}
+
+.mainInput {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--text-primary);
+    outline: none;
+}
+
+.mainInput::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.4;
+}
