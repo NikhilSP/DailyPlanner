@@ -1,55 +1,55 @@
 .container {
     padding: 0;
-    /* Override default pad */
-    cursor: pointer;
-    transition: all 0.3s ease;
-    user-select: none;
+    background: transparent;
+    padding: var(--spacing-sm) 0;
+    /* Remove card styling to make it blend into header */
+    border: none;
+    box-shadow: none;
 }
 
 .summary {
     display: flex;
     align-items: center;
-    padding: var(--spacing-md);
     gap: var(--spacing-md);
-    height: 48px;
+    width: 100%;
 }
 
 .titleGroup {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
-    width: 180px;
-    flex-shrink: 0;
+    gap: 8px;
+    min-width: 150px;
 }
 
 .iconBox {
-    background: var(--status-warning);
-    padding: 6px;
-    border-radius: 50%;
-    color: #FBC02D;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--status-warning);
+    border-radius: 4px;
+    /* Square with slight radius */
+    color: #F59E0B;
 }
 
 .title {
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text-primary);
 }
 
 .progressBarContainer {
     flex-grow: 1;
-    height: 8px;
-    background: var(--border-card);
-    border-radius: 4px;
+    height: 6px;
+    background: var(--bg-secondary);
+    border-radius: 3px;
     overflow: hidden;
-    position: relative;
 }
 
 .progressBarFill {
     height: 100%;
-    background: linear-gradient(90deg, var(--accent-secondary), var(--accent-focus));
-    border-radius: 4px;
-    transition: width 0.5s ease-out;
+    background: var(--accent-primary);
+    border-radius: 3px;
+    transition: width 0.5s ease;
 }

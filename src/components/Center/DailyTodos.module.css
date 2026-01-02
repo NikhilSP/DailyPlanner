@@ -1,45 +1,47 @@
 .container {
     height: 100%;
-    padding: 0;
     display: flex;
     flex-direction: column;
+    /* Seamless blend */
+    /* Flat design */
+    /* Use global bento-card styles for the box look */
 }
 
 .header {
-    padding: var(--spacing-lg) var(--spacing-lg) 0;
+    padding: var(--spacing-sm) 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border-card);
 }
 
 .dateBadge {
     display: flex;
     align-items: center;
     gap: 6px;
-    background: var(--status-warning);
-    padding: 6px 12px;
-    border-radius: 20px;
-    color: #F57F17;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 0.05em;
+    /* Minimalist text badge */
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.sunIcon {
+    color: var(--accent-primary);
 }
 
 .dateText {
-    color: var(--text-secondary);
-    font-weight: 500;
+    color: var(--text-tertiary);
+    font-size: 0.85rem;
 }
 
 .taskList {
     flex-grow: 1;
-    padding: 0 var(--spacing-lg);
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
-    /* Make sure drop area covers space */
+    gap: 2px;
+    /* Very tight list like Notion */
     min-height: 100px;
 }
 
@@ -49,58 +51,64 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--text-secondary);
-    opacity: 0.6;
+    color: var(--text-tertiary);
+    opacity: 0.8;
 }
 
 .dailyTask {
     display: flex;
-    align-items: center;
-    gap: var(--spacing-md);
-    padding: var(--spacing-md);
-    background: #FAFAFA;
-    border-radius: var(--radius-md);
-    transition: all 0.2s;
+    align-items: flex-start;
+    /* Top align for multiline */
+    gap: var(--spacing-sm);
+    padding: 6px 8px;
+    /* Tighter padding */
+    background: transparent;
+    border-radius: var(--radius-sm);
+    transition: background 0.1s;
     user-select: none;
+    font-size: 0.95rem;
 }
 
 .dailyTask:hover {
-    background: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    background: var(--bg-secondary);
 }
 
 .checkboxWrapper {
     display: flex;
     align-items: center;
+    padding-top: 3px;
+    /* Align with text baseline */
 }
 
 .checkbox {
-    width: 20px;
-    height: 20px;
-    border-radius: 6px;
-    border: 2px solid var(--border-card);
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    border: 1px solid var(--text-tertiary);
+    /* Muted border */
     cursor: pointer;
-    accent-color: var(--accent-focus);
+    accent-color: var(--accent-primary);
 }
 
 .taskText {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--text-primary);
     flex-grow: 1;
+    line-height: 1.5;
 }
 
 .completed {
     text-decoration: line-through;
-    opacity: 0.4;
+    color: var(--text-tertiary);
 }
 
 .deleteBtn {
     background: transparent;
     border: none;
-    color: var(--text-secondary);
+    color: var(--text-tertiary);
     opacity: 0;
     cursor: pointer;
-    padding: 4px;
+    padding: 2px;
     border-radius: 4px;
     transition: all 0.2s;
 }
@@ -111,29 +119,32 @@
 }
 
 .dailyTask:hover .deleteBtn {
-    opacity: 0.5;
-}
-
-.dailyTask:hover .deleteBtn:hover {
     opacity: 1;
 }
 
 .inputArea {
-    padding: var(--spacing-lg);
-    border-top: 1px solid var(--border-card);
+    padding-top: var(--spacing-md);
+    margin-top: auto;
+    /* Push to bottom */
 }
 
 .mainInput {
     width: 100%;
     border: none;
     background: transparent;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-family: inherit;
     color: var(--text-primary);
     outline: none;
+    padding: 8px 0;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.mainInput:focus {
+    border-bottom-color: var(--accent-primary);
 }
 
 .mainInput::placeholder {
-    color: var(--text-secondary);
-    opacity: 0.4;
+    color: var(--text-tertiary);
 }

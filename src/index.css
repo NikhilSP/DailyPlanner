@@ -1,40 +1,39 @@
 :root {
-  /* Palette - "Digital Sanctuary" / "Bento Box" Theme */
-  --bg-app: #FDFCF8;
-  /* Soft Off-White/Cream */
-  --text-primary: #2D3436;
-  --text-secondary: #636E72;
+  /* Palette - Notion-like Premium Theme */
+  --bg-app: #FFFFFF; /* Clean White */
+  --bg-secondary: #F7F7F5; /* Notion Sidebar Gray */
+  
+  --text-primary: #37352F; /* Notion Text Black */
+  --text-secondary: #787774; /* Notion Text Gray */
+  --text-tertiary: #9B9A97;
 
-  /* Cards / Bento Islands */
+  /* Cards */
   --bg-card: #FFFFFF;
-  --border-card: #F0F0F0;
-  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.03);
+  --border-card: #E9E9E7; /* Subtle border */
+  --shadow-card: 0px 1px 2px rgba(0, 0, 0, 0.04); /* Very subtle shadow */
 
-  /* Accents */
-  --accent-primary: #a8dadc;
-  /* Soft Blue/Green */
-  --accent-secondary: #f4a261;
-  /* Soft Orange */
-  --accent-focus: #e76f51;
-  /* Burnt Sienna for focus */
-  --accent-calm: #457b9d;
-  /* Deep Blue for calm */
-
-  /* Status */
-  --status-success: #C8E6C9;
-  --status-warning: #FFF9C4;
+  /* Accents - "Orange Vibes" */
+  --accent-primary: #F97316; /* Vibrant Orange */
+  --accent-secondary: #FFF7ED; /* Pale Orange Background */
+  --accent-focus: #EA580C; /* Darker Orange */
+  
+  /* Status Colors */
+  --status-success: #E3F2FD; /* Soft Blue */
+  --status-text-success: #1976D2;
+  --status-warning: #FFF3E0; /* Soft Orange */
+  --status-text-warning: #E65100;
 
   /* Spacing & Radius */
-  --radius-lg: 16px;
-  --radius-md: 12px;
-  --radius-sm: 6px;
+  --radius-lg: 8px; /* Reduced from 16px for neater look */
+  --radius-md: 6px;
+  --radius-sm: 4px;
 
-  --spacing-sm: 6px;
-  --spacing-md: 12px;
-  --spacing-lg: 16px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
 
   /* Typography */
-  --font-sans: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 * {

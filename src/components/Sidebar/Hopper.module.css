@@ -2,33 +2,37 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #F8F9FA;
-    /* Slightly off-white to distinguish from main area */
+    /* Use global bento-card styles */
+    padding: var(--spacing-sm);
 }
 
 .header {
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
-    margin-bottom: 4px;
+    margin-bottom: var(--spacing-sm);
+    padding: 0 4px;
+    /* Align with items */
 }
 
 .icon {
-    color: var(--text-secondary);
+    color: var(--text-tertiary);
+    /* Muted */
 }
 
 .title {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
+    /* Smaller, cleaner */
     font-weight: 600;
     margin: 0;
-    color: var(--text-primary);
+    color: var(--text-secondary);
 }
 
 .subtitle {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    margin: 0 0 var(--spacing-md) 0;
-    opacity: 0.7;
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    margin: 0 0 var(--spacing-sm) 4px;
+    opacity: 0.8;
 }
 
 .taskList {
@@ -36,32 +40,31 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: 2px;
     padding-right: 4px;
-    /* Space for scrollbar */
 }
 
 .taskCard {
     background: white;
-    padding: 12px;
+    padding: 6px 10px;
     border-radius: var(--radius-sm);
     border: 1px solid var(--border-card);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-card);
     cursor: grab;
     font-size: 0.9rem;
     color: var(--text-primary);
-    transition: transform 0.1s;
+    transition: background 0.1s, transform 0.1s;
 }
 
 .taskCard:hover {
+    background: var(--bg-secondary);
     transform: translateY(-1px);
-    border-color: var(--accent-primary);
 }
 
 .emptyState {
     text-align: center;
-    color: var(--text-secondary);
+    color: var(--text-tertiary);
     font-style: italic;
     margin-top: var(--spacing-lg);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }

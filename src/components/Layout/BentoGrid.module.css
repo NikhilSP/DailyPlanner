@@ -5,19 +5,26 @@
         "sidebar center center"
         "sidebar center center";
     grid-template-rows: auto 1fr;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 180px 1fr;
     /* Reduced sidebar width */
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
+    /* Tighten the gap */
     width: 95%;
-    height: 100%;
-    max-width: 700px;
-    /* Reduced from 1400px to accommodate 40% constraint better while remaining usable */
+    height: 90vh;
+    /* Reduced from 100% to float more like a card/window */
+    max-height: 800px;
+    /* Cap height for compactness */
+    max-width: 900px;
+    /* Reduced from 1400px/700px to accommodate 40% constraint better while remaining usable */
     position: relative;
+    margin: auto;
+    /* Center it */
 }
 
 .headerArea {
     grid-area: header;
     /* Header can be collapsible, so auto height */
+    padding-bottom: var(--spacing-sm);
 }
 
 .sidebarArea {
@@ -25,6 +32,8 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    padding-right: var(--spacing-sm);
+    /* Visual separation without border */
 }
 
 .centerArea {
