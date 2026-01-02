@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ChevronDown, ChevronUp, Trophy } from 'lucide-react';
 import styles from './YearlyMilestones.module.css';
 

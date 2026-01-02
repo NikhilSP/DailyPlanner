@@ -70,7 +70,7 @@ const DailyTodos = ({ tasks = [], onAdd, onToggle, onDelete, Draggable }) => {
                     sortedTasks.map((task, index) => (
                         Draggable ? (
                             <Draggable key={task.id} draggableId={task.id} index={index} isDragDisabled={sortBy === 'label'}>
-                                {(provided, snapshot) => (
+                                {(provided) => (
                                     <div
                                         ref={provided.innerRef}
                                         {...provided.draggableProps}
